@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Totvs Service Manager</title>
+    
+    <!--link rel="stylesheet" href="css/index.css"-->
+    <link rel="stylesheet" href="../../node_modules/angular-toastr/dist/angular-toastr.min.css">
+    <!--link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css"-->
+    <link rel="stylesheet" href="../../node_modules/admin-lte/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/admin-lte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../node_modules/admin-lte/dist/css/skins/_all-skins.min.css">
+   
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <!--script>window.$ = window.jQuery = require('./../../node_modules/jquery/dist/jquery.min.js')</script-->
+    
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular-route/angular-route.js"></script>
+    
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> 
+    <script src="../../node_modules/angular-electron/angular-electron.js"></script--> 
+    
+    <script src="../../node_modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="../../node_modules/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+    <script src="../../node_modules/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="../../node_modules/admin-lte/dist/js/app.min.js"></script>
+  </head>
+  <body class= "skin-blue fixed sidebar-mini">
+    <div class="wrapper">
+      <header class="main-header" ng-include="'./pages/header.html'"></header>
+      <aside class="main-sidebar" ng-include="'./pages/menu.html'"></aside>
+      <!--div class="content-wrapper" ng-include="'./pages/dashboard.html'"></div-->
+      <div class="content-wrapper" ui-view></div>
+      <footer class="main-footer" ng-include="'./pages/footer.html'"></footer>
+    </div>
+        
+    <script src="js/index.js"></script>
+    <script src="js/renderer.js"></script>
+    <!--script>require('./js/templete')</script-->
+</body>
+</html>
