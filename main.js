@@ -1,4 +1,7 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, Tray, Menu, globalShortcut  } = require('electron')
+//const data = require('./data');
+//const templateGenerator = require('./app/template');
+
 let win;
 function createWindow () {
   // Create the browser window.
@@ -30,4 +33,14 @@ app.on('activate', function () {
   if (win === null) {
     createWindow()
   }
+})
+
+/*
+ipcMain.on('curso-parado', (event, curso, tempoEstudado) => {
+    data.salvaDados(curso, tempoEstudado);
+    console.log(`O curso ${curso} foi estudado por ${tempoEstudado}`);
+});
+*/
+ipcMain.on('ping-test', (event, sendIp) => {    
+    console.log(sendIp);
 })
