@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ipcRenderer } from 'electron';
 
 @Component({
   selector: 'app-hello-world',
@@ -9,7 +10,6 @@ export class HelloWorldComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
+  
 }

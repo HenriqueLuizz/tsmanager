@@ -27,6 +27,9 @@
     "@angular/router": "4.4.6",
     "@totvs/thf-web": "prev12.1.18",
     "core-js": "^2.4.1",
+    "jsonfile": "^4.0.0",
+    "jsonfile-promised": "0.0.1",
+    "mongoose": "^5.0.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

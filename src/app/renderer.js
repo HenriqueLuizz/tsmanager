@@ -1,5 +1,5 @@
 const { ipcRenderer } = require('electron');
-const data = require('../../data');
+//const data = require('../../data');
 
 let ipTest = document.querySelector('#ipTest');
 let btnPingTest = document.querySelector('#btnPingTest');

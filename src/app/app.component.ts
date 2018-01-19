@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   menus = [
-    { label: 'Hello World', link: './hello-world' },
+    { label: 'Dashboard', link: './dashboard' },
+    { label: 'Start/Stop Serviçãos', link: './service' },
+    { label: 'Ping Test', link: './pingtest' }
   ];
 }
