@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app';
   menus = [
     { label: 'Dashboard', link: './dashboard' },
-    { label: 'Start/Stop Serviçãos', link: './service' },
+    { label: 'Start/Stop Servi�o', link: './service' },
     { label: 'Ping Test', link: './pingtest' }
   ];
 }

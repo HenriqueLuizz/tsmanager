@@ -53,12 +53,11 @@ ipcMain.on('start-service', (event, sendIp, serviceName) => {
     if (error) {
       
       console.error(`exec error: ${error}`);
-      //Fluxo de erro
-
+      //Gravar o erro
       return;
     }
-    console.log(`stdout: ${stdout}`);
-    console.log(`stderr: ${stderr}`);
+    //console.log(`stdout: ${stdout}`);
+    //console.log(`stderr: ${stderr}`);
 
     let content = { 
       date: new Date().toString(),
@@ -66,15 +65,11 @@ ipcMain.on('start-service', (event, sendIp, serviceName) => {
       service: serviceName,
       action: 'Start'
     }
-
+    //Gravar Log
     console.log('Gravar o log: ' + content);
-
-    //Gravar o log
     
-    //data.createDataFile(__dirname + '/data/logstart.json', content);
-    //datafile.addLog(__dirname + '\\data\\logstart.json', content);
-    //let log = datafile.getDataFile(__dirname + '\\data\\logstart.json');
-
+    //Enviar resposta que foi iniciado o serviço
+    win.send('service-started');
   });
 })
 ipcMain.on('stop-service', (event, sendIp, serviceName) => {
@@ -100,16 +95,46 @@ ipcMain.on('stop-service', (event, sendIp, serviceName) => {
       service: serviceName,
       action: 'Stop'
     }
-
+    //Gravar o log
     console.log('Gravar o log: ' + content);
 
-    //Gravar o log
-
+    //Enviar resposta que foi parado o serviço
+    win.send('service-stopped');
   });
 })
 
+// Entregar Serviço Cadastrado
+ipcMain.on('get-service', () => {
 
-//Retornar Finalizou Processo 
+  //Get dos serviços cadastrados
+  //Gravar o log
+  //Enviar resposta - lista de serviços cadastrados
+  win.send('service-stopped');
+})
+
+// Cadastrar Serviço
+ipcMain.on('post-service', (event, ipService, NameService, typeService) => {
+
+  //Post de serviço
+  //Gravar o log
+  //Enviar resposta serviceço cadastrado
+  win.send('service-added');
+
+})
+
+// Remover Serviço
+ipcMain.on('delete-service', (event, ipService, NameService, typeService) => {
+
+  //Post de serviço
+  //Gravar o log
+  //Enviar resposta serviceço cadastrado
+  win.send('service-deleted');
+  
+})
+
+// Entregar Log
+
+// Ping no IP
 
 // Pegar estado da memória
 
@@ -117,15 +142,4 @@ ipcMain.on('stop-service', (event, sendIp, serviceName) => {
 
 // Pegar estado do processo (PID)
 
-// Ping no IP
-
 // Scan Port
-
-// Entregar Log
-
-// Entregar Serviço Cadastrado
-
-// Cadastrar Serviço
-
-// Remover Serviço
-

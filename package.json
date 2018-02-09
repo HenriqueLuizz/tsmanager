@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "4.4.6",
     "@angular/platform-server": "4.4.6",
     "@angular/router": "4.4.6",
-    "@totvs/thf-web": "prev12.1.18",
+    "@totvs/thf-ui": "^1.0.0-rc.2",
     "core-js": "^2.4.1",
     "jsonfile": "^4.0.0",
     "jsonfile-promised": "0.0.1",

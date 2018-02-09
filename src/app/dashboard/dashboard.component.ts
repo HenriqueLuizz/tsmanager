@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ThfButtonModule } from '@totvs/thf-web/components/thf-button';
-import { ThfInfoModule } from '@totvs/thf-web/components/thf-info';
+import { ThfButtonModule } from '@totvs/thf-ui/components/thf-button';
+import { ThfInfoModule } from '@totvs/thf-ui/components/thf-info';
 import { sendRequest } from 'selenium-webdriver/http';
 
 @Component({
