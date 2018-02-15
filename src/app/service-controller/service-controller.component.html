@@ -1,0 +1,49 @@
+<section>
+    <div>
+        <h1>Controlador de Serviço</h1>
+        <p>Para a administração do Ambiente foi criado um Script com a sequência correta para a parada dos serviços, lembrando
+            que a sequência de inicialização do ambiente é que seja o License Server Primeiro, CtreeServer Segundo, DBAccess
+            Terceiro, e os demais serviços.</p>
+    </div>
+    <div class="cols-md-6">
+        <div class="cols-md-6">
+            <thf-info t-label="Controlador de Serviços" t-value="Status dos serviços">
+            </thf-info>
+        </div>
+        <div class="cols-ms-6">
+            <input #sendIP (keyup)="0" class="form-control" placeholder="192.168.0.1">
+            <input #serviceName (keyup)="0" class="form-control" placeholder="Nome do Serviço">
+
+            <thf-button (t-click)="startService(sendIP.value, serviceName.value)" t-disabled="false" t-icon="thf-icon thf-icon-settings"
+                t-id="btnStart" t-label="Start" t-primary="true" t-small="true">
+            </thf-button>
+            <thf-button (t-click)="stopService(sendIP.value, serviceName.value)" t-disabled="false" t-icon="thf-icon thf-icon-settings"
+                t-id="btnStop" t-label="Stop" t-primary="true" t-small="true">
+            </thf-button>
+        </div>
+
+        <div class="cols-ms-12">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a [routerLink]="['/addService']" class="btn btn-primary">
+                        Novo Serviço
+                    </a>
+                </span>
+                <input #textoProcurado (keyup)="0" class="form-control" placeholder="Filtrar por nome do serviço">
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <app-painel #painel *ngFor="let service of services | filtroPorNome: textoProcurado.value" titulo="{{service.name | uppercase }}"
+                class="cols-md-2 cols-sm-12">
+                <a [routerLink]="['/cadastro', service._id]">
+                    <app-service ip="{{service.ip}}" name="{{service.name}}" type="{{service.type}}"></app-service>
+                </a>
+                <!--botao nome="Remover" estilo="btn-danger btn-block" (acao)="remove(foto, painel)" confirmacao="true" ></botao-->
+                <button class="btn btn-danger btn-block" (click)=remove(foto)>Remover</button>
+            </app-painel>
+        </div>
+    </div>
+</section>

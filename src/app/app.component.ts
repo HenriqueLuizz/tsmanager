@@ -8,8 +8,29 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   menus = [
-    { label: 'Dashboard', link: './dashboard' },
-    { label: 'Start/Stop Serviço', link: './service' },
-    { label: 'Ping Test', link: './pingtest' }
+    { 
+      label: 'Dashboard', 
+      link: './dashboard' 
+    },
+    { 
+      label: 'ServiÃ§os', 
+      subItems: [
+        {
+          label: 'Cadastrar',
+          link: './service'
+        },
+        {
+          label: 'Start/Stop',
+          link: './serviceController'
+        }
+    ]},
+    { 
+      label: 'Util', 
+      subItems: [
+        {
+          label: 'Ping',
+          link: './pingTest'
+        }
+    ]}
   ];
 }
